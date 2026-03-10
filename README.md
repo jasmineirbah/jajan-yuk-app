@@ -1,64 +1,90 @@
-## Getting Started
+📱 JajanYuk - Aplikasi Pemesanan Jajanan
 
-This project is a starting point for a Flutter application.
+JajanYuk adalah aplikasi mobile sederhana berbasis Flutter & Dart yang memungkinkan pengguna untuk memilih menu jajanan dan melakukan pemesanan makanan dengan perhitungan total harga secara otomatis.
 
-A few resources to get you started if this is your first Flutter project:
+Aplikasi ini dibuat sebagai bagian dari latihan praktikum Pemrograman Teknologi Mobile (TPM).
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+🍜 Konsep Aplikasi
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+JajanYuk menghadirkan konsep pemesanan jajanan kaki lima yang praktis dan mudah digunakan. Pengguna dapat melihat berbagai menu makanan, memilih jumlah pesanan, dan langsung melihat total harga yang harus dibayar.
 
-## JajanYuk – Food Ordering App
+📸 Preview Aplikasi
 
-**JajanYuk** adalah aplikasi pemesanan makanan sederhana yang dibuat menggunakan **Flutter** sebagai bagian dari latihan kuis praktikum TPM. Aplikasi ini memungkinkan pengguna untuk login, melihat berbagai pilihan jajanan, dan melakukan pemesanan dengan menghitung total harga berdasarkan jumlah pesanan.
+## 📸 Preview Aplikasi
 
-Aplikasi ini dirancang dengan antarmuka yang sederhana namun menarik untuk memberikan pengalaman pengguna yang mudah dalam memilih dan memesan makanan.
+| Login Page | Home Page | Order Page |
+|------------|-----------|------------|
+| ![](assets/images/login.png) | ![](assets/images/home.png) | ![](assets/images/order.png) |
 
-### Fitur Utama
+🔑 Login
 
-* **Login Page**
-  Pengguna dapat masuk ke aplikasi menggunakan username dan password yang telah ditentukan.
+Gunakan akun berikut untuk masuk ke aplikasi.
+Username: Alfin
+Password: Alfin123
+Kredensial login dapat diubah pada file: login_page.dart
 
-* **Home Page**
+🗂️ Fitur Aplikasi
+🔐 Login	            Autentikasi pengguna sebelum masuk aplikasi
+🏠 Home Page	        Menampilkan banner dan menu makanan
+🍜 Menu Jajanan	      Menyediakan beberapa pilihan menu makanan
+🛒 Order Page	        Halaman untuk memesan makanan
+💰 Perhitungan Harga	Total harga dihitung otomatis sesuai jumlah pesanan
+🚪 Logout	            Keluar dari aplikasi
 
-  * Menampilkan banner makanan.
-  * Menyediakan beberapa pilihan menu jajanan.
-  * Setiap menu memiliki tombol **Pesan** untuk melakukan pemesanan.
-  * Terdapat tombol **Logout** untuk keluar dari aplikasi.
+🍽️ Menu yang Tersedia
+- Bakso
+- Seblak
+- Sate
+- Es Teh
+- Nasi Goreng
+- Mie Ayam
+- Nasi Padang
+- Soto
+- Es Jeruk
 
-* **Order Page**
+🚀 Cara Menjalankan Aplikasi
+Prasyarat
+Pastikan sudah menginstall:
+- Flutter SDK (versi 3.0 atau lebih baru)
+- Android Studio / VS Code
+- Emulator Android atau perangkat Android
 
-  * Menampilkan menu yang dipilih dari halaman Home.
-  * Pengguna dapat menentukan jumlah pesanan.
-  * Total harga akan dihitung secara otomatis berdasarkan jumlah pesanan.
+Langkah Menjalankan
+# Clone repository
+git clone https://github.com/username/jajan_yuk.git
 
-### Menu yang Tersedia
+# Masuk ke folder project
+cd jajan_yuk
 
-* Bakso
-* Seblak
-* Sate
-* Es Teh
-* Nasi Goreng
-* Mie Ayam 
-* Nasi Padang
-* Soto
-* Es Jeruk
+# Install dependencies
+flutter pub get
 
-### Teknologi yang Digunakan
+# Jalankan aplikasi
+flutter run
+📁 Struktur Project
+lib/
+├── main.dart
+├── pages/
+│   ├── login_page.dart
+│   ├── home_page.dart
+│   └── order_page.dart
 
-* **Flutter**
-* **Dart**
-* **Stateful & Stateless Widget**
+Keterangan:
+main.dart → Entry point aplikasi
+login_page.dart → Halaman login
+home_page.dart → Menampilkan daftar menu makanan
+order_page.dart → Halaman pemesanan dan perhitungan harga
 
-### Tujuan Pengembangan
+🛠️ Teknologi yang Digunakan
+Flutter
+Dart
+Stateful Widget
+Stateless Widget
+Navigator
 
-Aplikasi ini dibuat untuk melatih pemahaman mengenai:
-
-* Navigasi antar halaman di Flutter
-* Penggunaan Stateful dan Stateless Widget
-* Pengelolaan state untuk perhitungan total harga
-* Pembuatan UI sederhana pada aplikasi mobile
+🎯 Tujuan Pengembangan
+Aplikasi ini dibuat untuk mempelajari:
+Navigasi antar halaman di Flutter
+Penggunaan Stateful dan Stateless Widget
+Pengelolaan state untuk perhitungan harga
+Pembuatan UI aplikasi mobile sederhana

@@ -14,38 +14,31 @@ class Product {
 
 List<Product> dummyProducts = [
   Product(
-    name: "Wireless Mouse",
-    image: "https://picsum.photos/id/180/400/300",
-    price: 150000,
+    name: "Veggie tomato mix",
+    image: "assets/images/veggie.png",
+    price: 30000,
     description:
-        "Wireless mouse ergonomis dengan koneksi 2.4GHz yang stabil dan baterai tahan lama. Cocok untuk penggunaan kantor maupun gaming ringan.",
+        "Perpaduan sayuran segar dengan saus tomat spesial yang kaya rasa. Cocok untuk kamu yang ingin makan sehat tapi tetap lezat.",
   ),
   Product(
-    name: "Wireless Mouse",
-    image: "https://picsum.photos/id/180/400/300",
-    price: 150000,
+    name: "Nasi goreng",
+    image: "assets/images/nasigoreng.png",
+    price: 15000,
     description:
-        "Wireless mouse ergonomis dengan koneksi 2.4GHz yang stabil dan baterai tahan lama. Cocok untuk penggunaan kantor maupun gaming ringan.",
+        "Nasi goreng khas Indonesia dengan bumbu rempah pilihan, dilengkapi telur dan topping lezat yang menggugah selera.",
   ),
   Product(
-    name: "Wireless Mouse",
-    image: "https://picsum.photos/id/180/400/300",
-    price: 150000,
+    name: "Nasi lemak",
+    image: "assets/images/nasilemak.png",
+    price: 15000,
     description:
-        "Wireless mouse ergonomis dengan koneksi 2.4GHz yang stabil dan baterai tahan lama. Cocok untuk penggunaan kantor maupun gaming ringan.",
+        "Nasi gurih dimasak dengan santan, disajikan dengan sambal pedas, telur, dan pelengkap khas yang nikmat.",
   ),
   Product(
-    name: "Wireless Mouse",
-    image: "https://picsum.photos/id/180/400/300",
-    price: 150000,
+    name: "Ayam Goreng",
+    image: "assets/images/ayamgoreng.png",
+    price: 20000,
     description:
-        "Wireless mouse ergonomis dengan koneksi 2.4GHz yang stabil dan baterai tahan lama. Cocok untuk penggunaan kantor maupun gaming ringan.",
-  ),
-  Product(
-    name: "Wireless Mouse",
-    image: "https://picsum.photos/id/180/400/300",
-    price: 150000,
-    description:
-        "Wireless mouse ergonomis dengan koneksi 2.4GHz yang stabil dan baterai tahan lama. Cocok untuk penggunaan kantor maupun gaming ringan.",
-  ),
+        "Ayam goreng renyah di luar dan juicy di dalam, dibumbui rempah khas yang membuat rasanya semakin mantap.",
+  )
 ];

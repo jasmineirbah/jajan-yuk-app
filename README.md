@@ -1,90 +1,175 @@
-📱 JajanYuk - Aplikasi Pemesanan Jajanan
+# 🍔 Jajan Yuk - Food Ordering App
 
-JajanYuk adalah aplikasi mobile sederhana berbasis Flutter & Dart yang memungkinkan pengguna untuk memilih menu jajanan dan melakukan pemesanan makanan dengan perhitungan total harga secara otomatis.
+Aplikasi mobile berbasis Flutter yang dirancang untuk menampilkan daftar menu makanan, melihat detail produk, serta melakukan simulasi pemesanan. Aplikasi ini dibuat untuk mendemonstrasikan konsep dasar pengembangan mobile seperti navigasi, pengelolaan state, dan pengolahan input pengguna.
 
-Aplikasi ini dibuat sebagai bagian dari latihan praktikum Pemrograman Teknologi Mobile (TPM).
+Struktur proyek sudah dipisah ke beberapa bagian seperti halaman (pages), model data, dan assets sehingga mudah dikembangkan lebih lanjut.
 
-🍜 Konsep Aplikasi
+## Fitur yang Direncanakan
 
-JajanYuk menghadirkan konsep pemesanan jajanan kaki lima yang praktis dan mudah digunakan. Pengguna dapat melihat berbagai menu makanan, memilih jumlah pesanan, dan langsung melihat total harga yang harus dibayar.
+- **Authentication (Login Page)** (`ui/login_page.dart`)  
+  Login menggunakan username dan password sederhana tanpa backend sebagai simulasi autentikasi pengguna.
 
-📸 Preview Aplikasi
+- **Home Page (Menu Utama)** (`ui/home_page.dart`)  
+  Menampilkan daftar makanan dalam bentuk grid/list serta banner di bagian atas.
 
-## 📸 Preview Aplikasi
+- **Detail Product** (`ui/order_page.dart`)  
+  Menampilkan detail makanan seperti gambar, nama, harga, dan deskripsi.
 
-| Login Page | Home Page | Order Page |
-|------------|-----------|------------|
-| ![](assets/images/login.png) | ![](assets/images/home.png) | ![](assets/images/order.png) |
+- **Order / Pemesanan** (`ui/order_page.dart`)  
+  Input jumlah pesanan dan perhitungan total harga secara otomatis. 
 
-🔑 Login
+- **Favorite Feature** (`ui/order_page.dart`)  
+  Fitur like/unlike produk menggunakan icon favorit.
 
-Gunakan akun berikut untuk masuk ke aplikasi.
-Username: Alfin
-Password: Alfin123
-Kredensial login dapat diubah pada file: login_page.dart
+- **Logout System** (`home_page.dart`)  
+  Tombol logout dengan konfirmasi untuk kembali ke halaman login.
 
-🗂️ Fitur Aplikasi
-🔐 Login	            Autentikasi pengguna sebelum masuk aplikasi
-🏠 Home Page	        Menampilkan banner dan menu makanan
-🍜 Menu Jajanan	      Menyediakan beberapa pilihan menu makanan
-🛒 Order Page	        Halaman untuk memesan makanan
-💰 Perhitungan Harga	Total harga dihitung otomatis sesuai jumlah pesanan
-🚪 Logout	            Keluar dari aplikasi
+---
 
-🍽️ Menu yang Tersedia
-- Bakso
-- Seblak
-- Sate
-- Es Teh
-- Nasi Goreng
-- Mie Ayam
-- Nasi Padang
-- Soto
-- Es Jeruk
+### Arsitektur & Alur Aplikasi
 
-🚀 Cara Menjalankan Aplikasi
-Prasyarat
-Pastikan sudah menginstall:
-- Flutter SDK (versi 3.0 atau lebih baru)
-- Android Studio / VS Code
-- Emulator Android atau perangkat Android
+1. `main.dart` bertindak sebagai entry point aplikasi dan mengatur halaman awal.
+2. Halaman login digunakan untuk validasi user sebelum masuk ke aplikasi utama.
+3. `home_page.dart` menampilkan daftar produk dari model `Product`. 
+4. Saat item dipilih, data dikirim ke `order_page.dart` dan user dapat melihat total harga.
+5. Data seperti nama, harga, dan deskripsi diambil dari `models/product.dart`.
 
-Langkah Menjalankan
-# Clone repository
-git clone https://github.com/username/jajan_yuk.git
+Skema sederhana:
 
-# Masuk ke folder project
-cd jajan_yuk
+```
+Started Page
+     │
+     ▼
+Login Page
+     │
+     ▼
+Home Page
+     │
+     ├──► Order Page
+     │         
+     │
+     └──► Logout → Login Page
+```
 
-# Install dependencies
-flutter pub get
+---
 
-# Jalankan aplikasi
-flutter run
-📁 Struktur Project
-lib/
-├── main.dart
-├── pages/
-│   ├── login_page.dart
-│   ├── home_page.dart
-│   └── order_page.dart
+## Tumpukan Teknologi
 
-Keterangan:
-main.dart → Entry point aplikasi
-login_page.dart → Halaman login
-home_page.dart → Menampilkan daftar menu makanan
-order_page.dart → Halaman pemesanan dan perhitungan harga
+| Kebutuhan     | Library/Alat |
+|---------------|-------------|
+| Framework     | Flutter     |
+| Bahasa        | Dart        |
+| UI Design     | Material Design |
+| Font          | Google Fonts |
+| Navigasi      | Navigator   |
+| State         | StatefulWidget |
 
-🛠️ Teknologi yang Digunakan
-Flutter
-Dart
-Stateful Widget
-Stateless Widget
-Navigator
+---
 
-🎯 Tujuan Pengembangan
-Aplikasi ini dibuat untuk mempelajari:
-Navigasi antar halaman di Flutter
-Penggunaan Stateful dan Stateless Widget
-Pengelolaan state untuk perhitungan harga
-Pembuatan UI aplikasi mobile sederhana
+## Checklist Kemajuan Fitur
+
+| Modul        | Status | Catatan singkat                        |
+|--------------|:------:|--------------------------------------|
+| Started Page |   ☑    | Halaman awal aplikasi                |
+| Login Page   |   ☑    | Input username & password           |
+| Home Page    |   ☑    | Menampilkan daftar makanan          |
+| Detail Page  |   ☑    | Menampilkan detail produk           |
+| Order Page   |   ☑    | Hitung total harga                  |
+| Favorite     |   ☑    | Toggle like/unlike                  |
+| Logout       |   ☑    | Kembali ke halaman login            |
+
+---
+
+## Struktur Proyek
+
+```
+jajan_yuk_app/
+├── lib/
+│   ├── main.dart
+│   ├── models/
+│   │   └── product.dart
+│   ├── ui/
+│   │   ├── started_page.dart
+│   │   ├── login_page.dart
+│   │   ├── home_page.dart
+│   │   ├── order_page.dart 
+│
+├── assets/
+│   └── images/
+│       ├── logo.png
+│       ├── human.png
+│       ├── veggie.png
+│       ├── nasigoreng.png
+│       ├── nasilemak.png
+│       └── ayamgoreng.png
+│       └── food.svg
+│       └── food.png
+│
+└── pubspec.yaml
+```
+
+---
+
+## Menjalankan Aplikasi
+
+1. **Install dependency**
+   ```bash
+   flutter pub get
+   ```
+
+2. **Jalankan aplikasi**
+   ```bash
+   flutter run
+   ```
+
+3. **Jika terjadi error asset**
+   ```bash
+   flutter clean
+   flutter pub get
+   flutter run
+   ```
+
+---
+
+## Saran Implementasi
+
+- Gunakan `StatefulWidget` untuk fitur interaktif seperti favorite dan input jumlah.
+- Gunakan `setState()` untuk memperbarui tampilan secara real-time.
+- Gunakan `Navigator.push()` untuk berpindah halaman.
+- Gunakan `assets/images/` untuk menyimpan gambar lokal.
+- Pastikan semua asset sudah terdaftar di `pubspec.yaml`.
+
+---
+
+## Langkah Pengujian
+
+- Jalankan aplikasi dan pastikan semua halaman dapat diakses tanpa error.
+- Coba login dengan berbagai input.
+- Pastikan navigasi antar halaman berjalan dengan baik.
+- Uji perhitungan total harga pada halaman order.
+- Pastikan semua gambar asset muncul dengan benar.
+
+---
+
+## Konvensi Penamaan & Struktur Kode
+
+- Gunakan `snake_case` untuk nama file.
+- Gunakan `PascalCase` untuk class.
+- Pisahkan logic dan UI agar mudah dibaca.
+- Simpan model data di folder `models/`.
+- Simpan halaman di folder `ui/`.
+
+---
+
+## Ide Pengembangan Lanjutan
+
+- Tambahkan fitur **Cart (keranjang)**
+- Tambahkan **Checkout & pembayaran**
+- Integrasi dengan **API backend**
+- Tambahkan fitur **search & filter**
+- Tambahkan **rating & review**
+- Tambahkan animasi seperti **Hero & Fade**
+
+---
+
+README ini dapat dikembangkan lebih lanjut sesuai kebutuhan fitur aplikasi. Selamat mengembangkan aplikasi Flutter! 🚀

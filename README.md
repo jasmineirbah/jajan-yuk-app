@@ -73,7 +73,6 @@ Home Page
 | Started Page |   ☑    | Halaman awal aplikasi                |
 | Login Page   |   ☑    | Input username & password           |
 | Home Page    |   ☑    | Menampilkan daftar makanan          |
-| Detail Page  |   ☑    | Menampilkan detail produk           |
 | Order Page   |   ☑    | Hitung total harga                  |
 | Favorite     |   ☑    | Toggle like/unlike                  |
 | Logout       |   ☑    | Kembali ke halaman login            |

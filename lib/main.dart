@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:jajan_yuk_app/ui/login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:jajan_yuk_app/ui/started_page.dart';
 
 void main() {
+  runApp(const MainApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      
-      home: const LoginPage(),
+      theme: ThemeData(textTheme: GoogleFonts.poppinsTextTheme()),
+      home: const StartedPage(),
     );
   }
 }

@@ -11,15 +11,15 @@ class OrderPage extends StatefulWidget {
 }
 
 class _OrderPageState extends State<OrderPage> {
-  bool isLiked = false;
+  bool isLiked = false; //buat icon love favorite
 
   final TextEditingController qtyController = TextEditingController();
 
-  int totalHarga = 0;
+  int totalHarga = 0; //integral buat total harga
 
-  /// HITUNG TOTAL
+  // fungsi logika hitung total
   void _hitungTotal() {
-    int qty = int.tryParse(qtyController.text) ?? 0;
+    int qty = int.tryParse(qtyController.text) ?? 0; 
 
     setState(() {
       totalHarga = qty * widget.product.price.toInt();
@@ -32,17 +32,17 @@ class _OrderPageState extends State<OrderPage> {
       backgroundColor: const Color(0xFFF2F2F2),
 
       body: SafeArea(
-        child: Column(
+        child: Column( //kolom karena ke bawah jadi dibagi menjadi padding atas, image/clipoval, nama, harga, deskripsi, input jumlah, total harga)
           children: [
 
-            /// HEADER
+            // header halaman order (arrow back, judul halaman, icon favorite)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-              child: Row(
+              child: Row( //row karena ke samping
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
 
-                  /// BACK
+                  // style icon arrow back dan logika
                   IconButton(
                     icon: const Icon(Icons.arrow_back),
                     onPressed: () => Navigator.pop(context),
@@ -56,7 +56,7 @@ class _OrderPageState extends State<OrderPage> {
                     ),
                   ),
 
-                  /// FAVORITE
+                  // style icon love favorite dan logika
                   IconButton(
                     icon: Icon(
                       isLiked ? Icons.favorite : Icons.favorite_border,
@@ -72,19 +72,19 @@ class _OrderPageState extends State<OrderPage> {
               ),
             ),
 
-            /// IMAGE
+            // style image productnya
             ClipOval(
               child: Image.network(
                 widget.product.image,
-                height: 200,
-                width: 200,
+                height: 240,
+                width: 230,
                 fit: BoxFit.cover,
               ),
             ),
 
-            const SizedBox(height: 20),
+            const SizedBox(height: 0),
 
-            /// NAMA
+            // style nama productnya
             Text(
               widget.product.name,
               style: const TextStyle(
@@ -95,7 +95,7 @@ class _OrderPageState extends State<OrderPage> {
 
             const SizedBox(height: 5),
 
-            /// HARGA
+            // style harga productnya
             Text(
               "Rp ${widget.product.price.toStringAsFixed(0)}",
               style: const TextStyle(
@@ -107,7 +107,7 @@ class _OrderPageState extends State<OrderPage> {
 
             const SizedBox(height: 20),
 
-            /// DESKRIPSI
+            // style deskripsi productnya
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
@@ -130,13 +130,13 @@ class _OrderPageState extends State<OrderPage> {
 
             const SizedBox(height: 20),
 
-            /// INPUT JUMLAH
+            // ini buat input jumlah
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextField(
-                controller: qtyController,
+                controller: qtyController, //ini buat
                 keyboardType: TextInputType.number,
-                onChanged: (value) => _hitungTotal(),
+                onChanged: (value) => (){}, //kalo input jumlah blm berubah total harganya
                 decoration: InputDecoration(
                   hintText: "Masukkan Jumlah",
                   contentPadding: const EdgeInsets.symmetric(
@@ -163,7 +163,7 @@ class _OrderPageState extends State<OrderPage> {
 
             const SizedBox(height: 20),
 
-            /// BUTTON SUBMIT
+            // ini style dan logika button submit
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: ElevatedButton(
@@ -171,8 +171,13 @@ class _OrderPageState extends State<OrderPage> {
                   _hitungTotal();
 
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text("Pesanan berhasil!"),
+                    SnackBar(
+                      content: Text("Order successful!"),
+                      backgroundColor: const Color.fromARGB(255, 30, 149, 26),
+                      behavior: SnackBarBehavior.floating,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                     ),
                   );
                 },
@@ -192,7 +197,7 @@ class _OrderPageState extends State<OrderPage> {
 
             const SizedBox(height: 20),
 
-            /// TOTAL HARGA
+            // untuk logika dan style total harga
             Text(
               "Total Harga Rp $totalHarga",
               style: const TextStyle(
